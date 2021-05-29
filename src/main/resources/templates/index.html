@@ -1,0 +1,399 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Avaya云体验中心</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+
+
+
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+		<script src="js/respond.min.js"></script>
+		<![endif]-->
+
+</head>
+<body>
+	<div id="page">
+		<nav class="fh5co-nav" role="navigation">
+			<div class="top">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12 text-right">
+							<p class="num"><span th:text="${msg}" style="color: yellow"></span>,咨询电话: 010-58292266</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="top-menu">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-1">
+							<div id="fh5co-logo"><a href="index.html">Experience_Center </a></div>
+						</div>
+						<div class="col-xs-11 text-right menu-1">
+							<ul>
+								<li class="active"><a href="#">首页</a></li>
+								<li><a href="#content">网站概述</a></li>
+
+								<li class="has-dropdown">
+									<a href="#experience">场景体验</a>
+									<ul class="dropdown">
+										<li><a href="#">办公通讯</a></li>
+										<li><a href="http://111.207.158.182:8088/hotline">客户中心</a></li>
+										<li><a href="#">智能外呼</a></li>
+										<li><a href="#">敏捷开发</a></li>
+									</ul>
+								</li>
+								<li class="has-dropdown">
+									<a href="#">工具入口</a>
+									<ul class="dropdown">
+										<li><a href="http://111.207.158.182:8080/fileshare/">文件中转站</a></li>
+										<li><a href="http://219.232.39.198/">应用下载</a></li>
+										<li><a href="http://111.207.158.182:8888/">测试用户管理</a></li>
+										<li><a href="#">敏捷开发入口</a></li>
+									</ul>
+								</li>
+								<li><a href="#request1">注册(申请测试)</a></li>
+								<li><a href="" role="button" data-toggle="modal" data-target="#myModal"><span>登陆</span></a></li>
+
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</nav>
+
+		<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/img_bg_1.jpg);" data-stellar-background-ratio="0.5">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center">
+						<div class="display-t">
+							<div class="display-tc animate-box" data-animate-effect="fadeIn">
+								<h1>欢迎来到Avaya云体验中心</h1>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div id="fh5co-counter" class="fh5co-counters">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 text-center animate-box">
+						<span class="fh5co-counter js-counter" data-from="0" data-to="100356" data-speed="5000" data-refresh-interval="50"></span>
+						<span class="fh5co-counter-label">最终使用者</span>
+					</div>
+					<div class="col-md-3 text-center animate-box">
+						<span class="fh5co-counter js-counter" data-from="0" data-to="5290" data-speed="5000" data-refresh-interval="50"></span>
+						<span class="fh5co-counter-label">企业用户</span>
+					</div>
+					<div class="col-md-3 text-center animate-box">
+						<span class="fh5co-counter js-counter" data-from="0" data-to="4039" data-speed="5000" data-refresh-interval="50"></span>
+						<span class="fh5co-counter-label">解决方案</span>
+					</div>
+					<div class="col-md-3 text-center animate-box">
+						<span class="fh5co-counter js-counter" data-from="0" data-to="9585" data-speed="5000" data-refresh-interval="50"></span>
+						<span class="fh5co-counter-label">产品功能</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="fh5co-explore" class="fh5co-bg-section">
+			<div class="container" id="content">
+				<div class="row animate-box">
+					<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+						<h2>网站概述</h2>
+						<p>Avaya全套解决方案云体验中心，联络中心解决方案、企业办公通讯、IPO解决方案、敏捷开发等等 </p>
+					</div>
+				</div>
+			</div>
+			<div class="fh5co-explore fh5co-explore1">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 col-md-push-5 animate-box">
+							<img class="img-responsive" src="images/work1.jpg" alt="work">
+						</div>
+						<div class="col-md-4 col-md-pull-8 animate-box">
+							<div class="mt">
+								<h3>体验内容</h3>
+								<p>各个场景体验、云端体验、解决方案分享、个性化POC流程和用例</p>
+								<ul class="list-nav">
+									<li><i class="icon-check2"></i>企业办公通讯</li>
+									<li><i class="icon-check2"></i>联络中心及智能外呼</li>
+									<li><i class="icon-check2"></i>IPO解决方案</li>
+									<li><i class="icon-check2"></i>敏捷开发</li>
+								</ul>
+								<p><a class="btn btn-primary btn-lg popup-vimeo btn-video" href=""><i class="icon-play"></i>观看宣传视频</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="fh5co-explore">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 col-md-pull-1 animate-box">
+							<img class="img-responsive" src="images/work2.jpg" alt="work">
+						</div>
+						<div class="col-md-4 animate-box">
+							<div class="mt">
+								<div>
+									<h4><i class="icon-user"></i>IT基础架构</h4>
+									<p>LDAP、NTP、Docker、各种数据库、Web容器、Nginx、远程VPN、远程公网桌面</p>
+								</div>
+								<div>
+									<h4><i class="icon-video2"></i>Avaya Aura架构</h4>
+									<p>SMGR、SM、CM、AES、AADS、PS、SBCE、Utility、AAEP、ACRA、CMS</p>
+								</div>
+								<div>
+									<h4><i class="icon-shield"></i>协助及云会议室</h4>
+									<p>Equinox系列会议系统</p>
+								</div>
+								<div>
+									<h4><i class="icon-shield"></i>敏捷开发</h4>
+									<p>Avaya Breeze平台</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div id="fh5co-project">
+			<div class="container" id="experience">
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+						<h2>场景体验</h2>
+						<p>网站使用说明、产品POC指南、解决方案场景</p>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid proj-bottom">
+				<div class="row">
+					<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+						<a href="#"><img src="images/project1.png" alt="" class="img-responsive">
+							<h3>办公通讯场景</h3>
+							<span>View Course</span>
+						</a>
+					</div>
+					<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+						<a href="#"><img src="images/project3.png" alt="" class="img-responsive">
+							<h3>客服中心场景</h3>
+							<span>View Course</span>
+						</a>
+					</div>
+					<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+						<a href="#"><img src="images/project-3.jpg" alt="" class="img-responsive">
+							<h3>智能外呼场景</h3>
+							<span>View Course</span>
+						</a>
+					</div>
+					<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+						<a href="#"><img src="images/project-1.jpg" alt="" class="img-responsive">
+							<h3>平台可视化场景</h3>
+							<span>View Course</span>
+						</a>
+					</div>
+					<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+						<a href="#"><img src="images/project-9.jpg" alt="" class="img-responsive">
+							<h3>敏捷开发能力</h3>
+							<span>View Course</span>
+						</a>
+					</div>
+					<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+						<a href="#"><img src="images/project6.png" alt="" class="img-responsive">
+							<h3>平台高可靠能力</h3>
+							<span>View Course</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="fh5co-steps">
+			<div class="container" id="request1">
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+						<h2>开始POC</h2>
+
+						<p><a href="" role="button" data-toggle="modal" data-target="#mailModal"><span>申请测试</span></a></p>
+					</div>
+				</div>
+
+				<div class="row bs-wizard animate-box" style="border-bottom:0;">
+
+					<div class="col-xs-3 bs-wizard-step complete">
+						<div class="text-center bs-wizard-stepnum"><h4>Step 1</h4></div>
+						<div class="progress"><div class="progress-bar"></div></div>
+						<a href="#" class="bs-wizard-dot"></a>
+						<div class="bs-wizard-info text-center"><p>申请测试</p></div>
+					</div>
+
+					<div class="col-xs-3 bs-wizard-step active"><!-- complete -->
+						<div class="text-center bs-wizard-stepnum"><h4>Step 2</h4></div>
+						<div class="progress"><div class="progress-bar"></div></div>
+						<a href="#" class="bs-wizard-dot"></a>
+						<div class="bs-wizard-info text-center"><p>我们联络您，沟通测试场景</p></div>
+					</div>
+
+					<div class="col-xs-3 bs-wizard-step disabled"><!-- complete -->
+						<div class="text-center bs-wizard-stepnum"><h4>Step 3</h4></div>
+						<div class="progress"><div class="progress-bar"></div></div>
+						<a href="#" class="bs-wizard-dot"></a>
+						<div class="bs-wizard-info text-center"><p>核查、开通、测试</p></div>
+					</div>
+
+					<div class="col-xs-3 bs-wizard-step disabled"><!-- active -->
+						<div class="text-center bs-wizard-stepnum"><h4>Step 4</h4></div>
+						<div class="progress"><div class="progress-bar"></div></div>
+						<a href="#" class="bs-wizard-dot"></a>
+						<div class="bs-wizard-info text-center"><p>测试完毕、关闭、回访</p></div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">用户登陆</h4>
+					</div>
+					<form action="/login" method="post">
+						<div class="modal-body">
+
+							<div class="form-group">
+								<label for="username">用户名</label>
+								<input type="text" class="form-control" id="username" name="username" placeholder="用户名">
+							</div>
+							<div class="form-group">
+								<label for="password">密码</label>
+								<input type="password" class="form-control" id="password" name="password" placeholder="密码">
+							</div>
+
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+							<button type="submit" class="btn btn-primary">登陆</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- Modal -->
+
+		<!-- Modal -->
+		<div class="modal fade" id="mailModal" tabindex="-1" role="dialog" aria-labelledby="mailLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="mailLabel">申请测试</h4>
+					</div>
+					<form action="/sendMail" method="post">
+						<div class="modal-body">
+							<div class="form-group">
+								<label for="mailco">公司名称</label>
+								<input type="text" class="form-control" id="mailco" name="mailco" placeholder="公司名称（必须填写）">
+							</div>
+							<div class="form-group">
+								<label for="mailname">申请人</label>
+								<input type="text" class="form-control" id="mailname" name="mailname" placeholder="联系人（必须填写）">
+							</div>
+							<div class="form-group">
+								<label for="mailtelephone">手机号码</label>
+								<input type="text" class="form-control" id="mailtelephone" name="mailtelephone" placeholder="手机号码（必须填写）">
+							</div>
+							<div class="form-group">
+								<label for="mailadd">Email地址</label>
+								<input type="text" class="form-control" id="mailadd" name="mailadd" placeholder="Email地址（必须填写）">
+							</div>
+
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+							<button type="submit" class="btn btn-primary">提交申请</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- Modal -->
+
+	<div>
+	<footer>
+
+		<div class="row copyright">
+			<div class="col-md-12 text-center">
+				<p>
+					<small class="block">Copyright &copy; 2020.长虹佳华 All rights reserved.#</small>
+				</p>
+			</div>
+		</div>
+	</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Carousel -->
+	<script src="js/owl.carousel.min.js"></script>
+	<!-- countTo -->
+	<script src="js/jquery.countTo.js"></script>
+	<!-- Magnific Popup -->
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/magnific-popup-options.js"></script>
+	<!-- Main -->
+	<script src="js/main.js"></script>
+	</div>
+	</body>
+
+</html>
+

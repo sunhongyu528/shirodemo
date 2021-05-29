@@ -1,0 +1,46 @@
+#spring:
+ # thymeleaf:
+  #  prefix: "classpath:/templates/"
+   # suffix: ".html"
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.98.130:33306/demo?useUnicode=true&useSSL=false&characterEncoding=utf8
+    #url: jdbc:mysql://127.0.0.1:33306/demo?useUnicode=true&useSSL=false&characterEncoding=utf8
+    username: root
+    password: Avaya123
+
+  ##发邮件
+  mail:
+    host: smtp.163.com
+    username: sunhoyu@163.com #自己的邮箱账号
+    password: Avaya123  #这个不是登录密码而是163授权登录的密码
+    default-encoding: UTF-8
+
+
+  ##AD认证
+  ldap:
+    urls: ldaps://Ldap1.changhongit.com:636
+    base: DC=changhongit,DC=com
+    username: "administrator@changhongit.com"
+    password: Avaya123
+
+
+
+
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+server:
+  port: 8081
+
+
+
+
+
+
+#debug: true

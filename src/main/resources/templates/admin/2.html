@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<base th:href="@{/}">
+
+<head>
+    <meta charset="utf-8">
+    <title>Layui</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="layui/css/layui.css"  media="all">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+
+<table class="layui-hide" id="test" lay-filter="test"></table>
+
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <a href="" role="button" data-toggle="modal" data-target="#myAdd">
+        <button class="layui-btn layui-btn-sm">添加用户</button>
+    　  </a>
+    </div>
+</script>
+
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+
+
+<script src="layui/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+
+<script>
+    layui.use('table', function(){
+        var table = layui.table;
+
+        table.render({
+            elem: '#test'
+            ,url:'/ad/pagelist'
+            ,toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
+            ,defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
+                title: '提示'
+                ,layEvent: 'LAYTABLE_TIPS'
+                ,icon: 'layui-icon-tips'
+            }]
+            ,title: 'AD用户数据表'
+            ,cols: [
+                [
+                    {type: 'checkbox', fixed: 'left'}
+                    ,{field:'id', title:'ID', width:100, fixed: 'left', sort: true}
+                    ,{field:'displayName', title:'名字', width:100}
+                    ,{field:'samaccountName', title:'登录名', width:120}
+                    ,{field:'sn', title:'姓', width:80}
+                    ,{field:'givenName', title:'名', width:100,  sort: true}
+                    ,{field:'telephoneNumber', title:'分机号码', width:120, sort: true}
+                    ,{field:'mail', title:'Email', width:300, sort: true}
+                    ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:150}
+                ]
+            ]
+            ,page: true
+        });
+
+
+
+        //监听行工具事件
+        table.on('tool(test)', function(obj){
+            var data = obj.data;
+            console.log(obj)
+            if(obj.event === 'del'){
+                layer.confirm('真的删除行么', function(index){
+                    //obj.del();
+                    //获取对象参数
+
+                    var params={
+                        'samaccountName':data.samaccountName
+                    }
+
+                    dele(params);
+
+
+                    layer.close(index);
+                });
+
+                function  dele(params){
+                    $.ajax({
+                        url:"/ad/delperson",
+                        type:"post",
+                        contentType: 'application/json;charset=UTF-8',
+                        dataType:'json',
+                        data: JSON.stringify(params),
+                        success:function(rep){
+                            console.log(rep)
+                            layer.msg('删除成功');
+                            tables();
+                        },
+                        error:function(or){
+                            console.log(or)
+                            alert('删除成功')
+                            window.location.href = '/admin/2';
+                        }
+                    })
+                }
+
+
+
+
+
+
+            } else if(obj.event === 'edit'){
+                layer.prompt({
+                    formType: 2
+                    ,value: data.email
+                }, function(value, index){
+                    obj.update({
+                        email: value
+                    });
+                    layer.close(index);
+                });
+            }
+        });
+    });
+</script>
+
+
+
+
+<!-- 模态框（Modal） -->
+<div class="modal" tabindex="-1" role="dialog"  id="myAdd">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">添加用户</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+
+                <div class="form-group">
+                    <label for="xing">姓</label>
+                    <input type="text" class="form-control" id="xing" name="xing" placeholder="用户姓：可以为中文">
+                </div>
+                <div class="form-group">
+                    <label for="ming">名</label>
+                    <input type="text" class="form-control" id="ming" name="ming" placeholder="用户名：可以为中文">
+                </div>
+                <div class="form-group">
+                    <label for="phone"> 分机号码</label>  <label id="phonecheck"></label>
+                    <input type="text" class="form-control" id="phone" name="phone" placeholder="分机号码">
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="sub">保存</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    $("#sub").click(function () {
+        //请求参数
+        var xing=$('#xing').val();
+        var ming=$('#ming').val();
+        var phone=$('#phone').val();
+        //
+        $.ajax({
+            //请求方式
+            type : "POST",
+            //请求的媒体类型
+            //  contentType: "application/json;charset=UTF-8",
+            //请求地址
+            url : "/ad/addperson",
+            //数据，json字符串
+            data:{xing:xing,ming:ming,phone:phone},
+            //请求成功
+            success : function(result) {
+                console.log(result);
+                //$('#addMessage').text('成功！！！sAMAccountName：'+result.sAMAccountName+" , "+"密码："+result.password);
+                window.alert('提交成功！！！');
+                $('#myAdd').modal('hide')
+                window.location.href = '/admin/2';
+            },
+        });
+    })
+</script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

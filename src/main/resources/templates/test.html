@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:shiro="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+</head>
+<body>
+<h1>Admin界面</h1>
+<h3 th:text="${username}">您好，</h3>
+<hr>
+
+<div shiro:hasPermission="user:add">
+    <a href="user/useradd">添加用户</a><br>
+</div>
+<div shiro:hasPermission="user:update">
+    <a href="user/userupdate">修改用户</a><br>
+</div>
+<div>
+    <a href="user/userlist">所有用户</a>
+</div>
+<br>
+<a href="/logout">登出</a>
+
+
+
+</body>
+</html>
